@@ -23,6 +23,11 @@ function App() {
   //   console.log('test', isd)
   // }
 
+  // Add Task
+  const addTask = (task) => {
+    console.log(task)
+  }
+
   // Delete Task
   const deleteTask = (id) => {
     setTasks(tasks.filter( (task) => task.id !==id))
@@ -36,10 +41,12 @@ function App() {
   return (
     <div className="container">
       <Header/>
-      <AddTask />
+      <AddTask onAdd={addTask}/>
       <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/>
     </div>
   );
 }
 
 export default App;
+
+// 1:11:05
